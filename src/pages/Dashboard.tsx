@@ -38,12 +38,12 @@ const itemVariants = {
 // ─── Fuel mix data ─────────────────────────────────────────────────────────
 
 const fuelMixData = [
-  { name: 'VLSFO',      value: 3, color: '#F59E0B' },
-  { name: 'LNG',        value: 3, color: '#06B6D4' },
-  { name: 'Methanol',   value: 2, color: '#10B981' },
-  { name: 'Hydrogen',   value: 2, color: '#34D399' },
-  { name: 'Ammonia',    value: 2, color: '#F87171' },
-  { name: 'Shore Power', value: 4, color: '#94A3B8' },
+  { name: 'VLSFO',      value: 3, color: 'var(--color-amber)' },
+  { name: 'LNG',        value: 3, color: 'var(--color-cyan)' },
+  { name: 'Methanol',   value: 2, color: 'var(--color-emerald)' },
+  { name: 'Hydrogen',   value: 2, color: 'var(--color-emerald-light)' },
+  { name: 'Ammonia',    value: 2, color: 'var(--color-coral)' },
+  { name: 'Shore Power', value: 4, color: 'var(--color-text-secondary)' },
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
@@ -143,21 +143,21 @@ export default function Dashboard() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Dot-grid background */}
         <motion.div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10"
           style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)',
             backgroundSize: '32px 32px',
           }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.1 }}
           transition={{ duration: 1.2 }}
         />
         {/* Subtle radial glow */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none bg-emerald/5"
           style={{
-            background:
-              'radial-gradient(ellipse 70% 50% at 50% 60%, rgba(16,185,129,0.08) 0%, transparent 70%)',
+            maskImage: 'radial-gradient(ellipse 70% 50% at 50% 60%, black 0%, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 70% 50% at 50% 60%, black 0%, transparent 70%)'
           }}
         />
 
@@ -359,7 +359,7 @@ export default function Dashboard() {
             </h2>
             <p className="text-text-secondary text-xs mt-0.5">Real-time telemetry & fuel analysis</p>
           </div>
-          <div className="flex-1 bg-surface/50 rounded-xl border border-white/[0.04] overflow-hidden">
+          <div className="flex-1 bg-overlay rounded-xl border border-border overflow-hidden">
             <LiveMap />
           </div>
         </GlassCard>
@@ -378,7 +378,7 @@ export default function Dashboard() {
             {sortedAlerts.map((alert) => (
               <div
                 key={alert.id}
-                className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-white/10 transition-colors"
+                className="flex items-start gap-3 p-3 rounded-xl bg-card border border-border hover:border-emerald/50 transition-colors"
               >
                 <div className="shrink-0 pt-0.5">
                   <Badge label={alert.severity.toUpperCase()} variant={severityBadgeVariant[alert.severity]} />
@@ -454,7 +454,7 @@ export default function Dashboard() {
                       <span className="text-xs font-body text-text-secondary">Fuel Level</span>
                       <span className="text-xs font-mono text-text-primary">{vessel.fuelLevelPct}%</span>
                     </div>
-                    <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                    <div className="h-1.5 w-full rounded-full bg-overlay overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all ${fuelLevelColor(vessel.fuelLevelPct)}`}
                         style={{ width: `${vessel.fuelLevelPct}%` }}

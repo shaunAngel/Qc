@@ -6,10 +6,40 @@
 @tailwind utilities;
 
 :root {
-  /* Color tokens */
+  /* Pastel Theme (Default) */
+  --color-base: #faf8f5;
+  --color-surface: #ffffff;
+  --color-card: rgba(0, 0, 0, 0.02);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-overlay: rgba(0, 0, 0, 0.04);
+
+  --color-emerald: #10b981;
+  --color-emerald-light: #6ee7b7;
+  --color-emerald-dark: #047857;
+
+  --color-cyan: #06b6d4;
+  --color-cyan-light: #67e8f9;
+  --color-cyan-dark: #0e7490;
+
+  --color-amber: #f59e0b;
+  --color-amber-light: #fcd34d;
+  --color-amber-dark: #b45309;
+
+  --color-coral: #f87171;
+  --color-coral-light: #fca5a5;
+  --color-coral-dark: #b91c1c;
+
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+}
+
+.theme-dark {
+  /* Dark Theme */
   --color-base: #050b14;
   --color-surface: #0a1628;
   --color-card: rgba(255, 255, 255, 0.04);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-overlay: rgba(255, 255, 255, 0.04);
 
   --color-emerald: #10b981;
   --color-emerald-light: #34d399;

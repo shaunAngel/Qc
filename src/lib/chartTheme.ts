@@ -1,29 +1,29 @@
 export const CHART_COLORS = {
-  emerald: '#10B981',
-  cyan: '#06B6D4',
-  amber: '#F59E0B',
-  coral: '#F87171',
-  emeraldLight: '#34D399',
-  cyanLight: '#22D3EE',
-  amberLight: '#FCD34D',
-  coralLight: '#FCA5A5',
+  emerald: 'var(--color-emerald)',
+  cyan: 'var(--color-cyan)',
+  amber: 'var(--color-amber)',
+  coral: 'var(--color-coral)',
+  emeraldLight: 'var(--color-emerald-light)',
+  cyanLight: 'var(--color-cyan-light)',
+  amberLight: 'var(--color-amber-light)',
+  coralLight: 'var(--color-coral-light)',
 };
 
 export const CHART_THEME = {
   backgroundColor: 'transparent',
-  gridColor: 'rgba(255,255,255,0.06)',
-  textColor: '#94A3B8',
+  gridColor: 'var(--color-border)',
+  textColor: 'var(--color-text-secondary)',
   colors: [CHART_COLORS.emerald, CHART_COLORS.cyan, CHART_COLORS.amber, CHART_COLORS.coral],
   tooltip: {
     contentStyle: {
-      backgroundColor: '#0A1628',
-      border: '1px solid rgba(255,255,255,0.1)',
+      backgroundColor: 'var(--color-surface)',
+      border: '1px solid var(--color-border)',
       borderRadius: '12px',
-      color: '#F1F5F9',
+      color: 'var(--color-text-primary)',
     },
   },
   axis: {
-    tick: { fill: '#94A3B8', fontSize: 11 },
-    line: { stroke: 'rgba(255,255,255,0.06)' },
+    tick: { fill: 'var(--color-text-secondary)', fontSize: 11 },
+    line: { stroke: 'var(--color-border)' },
   },
 };

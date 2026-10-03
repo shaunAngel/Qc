@@ -35,13 +35,13 @@ export function LiveMap() {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
-                fill="#2a303c"
-                stroke="#3f4859"
+                fill="var(--color-card)"
+                stroke="var(--color-border)"
                 strokeWidth={0.5}
                 style={{
                   default: { outline: "none" },
-                  hover: { fill: "#374151", outline: "none" },
-                  pressed: { fill: "#2a303c", outline: "none" },
+                  hover: { fill: "var(--color-overlay)", outline: "none" },
+                  pressed: { fill: "var(--color-card)", outline: "none" },
                 } as any}
               />
             ))

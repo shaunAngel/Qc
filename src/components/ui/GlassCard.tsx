@@ -32,8 +32,8 @@ export function GlassCard({
   animate = false,
 }: GlassCardProps) {
   const baseStyle: React.CSSProperties = {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(255,255,255,0.08)',
+    background: 'var(--color-card)',
+    border: '1px solid var(--color-border)',
     backdropFilter: 'blur(12px)',
     borderRadius: '1rem',
   };
