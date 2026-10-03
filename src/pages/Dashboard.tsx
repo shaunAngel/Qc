@@ -16,6 +16,7 @@ import { KPICard } from '@/components/ui/KPICard';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { AreaChartWrapper } from '@/components/charts/AreaChartWrapper';
+import { LiveMap } from '@/components/charts/LiveMap';
 import { CHART_THEME } from '@/lib/chartTheme';
 import type { Alert, Vessel } from '@/types';
 
@@ -349,6 +350,19 @@ export default function Dashboard() {
             </div>
           </GlassCard>
         </div>
+
+        {/* ── Live Global Fleet Map ─────────────────────────────────────── */}
+        <GlassCard className="p-5 h-[400px] flex flex-col">
+          <div className="mb-4">
+            <h2 className="font-display font-semibold text-base text-text-primary">
+              Live Global Fleet Map
+            </h2>
+            <p className="text-text-secondary text-xs mt-0.5">Real-time telemetry & fuel analysis</p>
+          </div>
+          <div className="flex-1 bg-surface/50 rounded-xl border border-white/[0.04] overflow-hidden">
+            <LiveMap />
+          </div>
+        </GlassCard>
 
         {/* ── Alerts Panel ───────────────────────────────────────────────── */}
         <GlassCard className="p-5">

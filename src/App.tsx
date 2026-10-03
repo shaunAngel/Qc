@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import TopNav from '@/components/nav/TopNav'
+import Sidebar from '@/components/nav/Sidebar'
 import PageTransition from '@/components/animations/PageTransition'
 import Dashboard from '@/pages/Dashboard'
 import Predictor from '@/pages/Predictor'
@@ -25,9 +25,9 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-base text-text-primary">
-        <TopNav />
-        <main className="pt-16">
+      <div className="flex min-h-screen bg-base text-text-primary">
+        <Sidebar />
+        <main className="flex-1 md:ml-64 w-full">
           <AnimatedRoutes />
         </main>
       </div>
